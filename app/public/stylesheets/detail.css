@@ -57,9 +57,23 @@ img[title] {
     filter: brightness(100%);
 }
 
+@media (min-width:320px) {
 
+    * {
+        font-size: 11px;
+    }
+
+    .main-detalle .margin-section {
+        margin-top: 2rem !important;
+    }
+
+}
 
 @media (min-width:425px) {
+
+    * {
+        font-size: 16px;
+    }
 
     .main-detalle .margin-section {
         margin-top: 2rem !important;
@@ -68,6 +82,10 @@ img[title] {
 }
 
 @media (min-width:768px) {
+
+    * {
+        font-size: 16px;
+    }
 
     .main-detalle .margin-section {
         margin-top: 3rem !important;

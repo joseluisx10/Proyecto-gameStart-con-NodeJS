@@ -2,13 +2,13 @@
   <div class="" id="panorama"></div>
   <main class="row container-fluid ps-md-0  my-5">
 
-    <section class="main-genres col-xl-3 col-md-3 col-sm-12 border border-warning px-md-0 mt-3" id="collapse-body">
+    <section class="main-genres col-xl-3 col-md-3 col-sm-12 col-12 border border-warning px-sm-0 mt-3"
+      id="collapse-body">
       <p><span class="text-warning">Generos</span></p>
       <section class="">
         <ul class="flex-column pt-md-2 pt-sm-1 mt-md-3">
           <% for (const elemento of genre) { %>
             <li class="pt-md-2">
-              <!--CONSULTAR SI PUEDO TENER H3 REPETIDOS-->
               <a class="p-2 item-genre text-warning" href='/?search=<%=elemento.nombre%>'>
                 <%=elemento.nombre%>
               </a>
@@ -17,7 +17,7 @@
         </ul>
       </section>
     </section>
-    <section class="container-fluid home-main-gallery col-xl-9 col-md-9 col-sm-12" id="main-gallery">
+    <section class="container-fluid home-main-gallery col-xl-9 col-md-9 col-sm-12 col-12" id="main-gallery">
       <div class="d-flex justify-content-between mt-3">
         <div>
           <button class="btn btn-warning" id="collapse" type="button">
