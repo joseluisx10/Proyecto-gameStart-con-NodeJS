@@ -1,0 +1,74 @@
+<%-include('header')%>
+  <div class="" id="panorama"></div>
+  <main class="row container-fluid ps-md-0  my-5">
+
+    <section class="main-genres col-xl-3 col-md-3 col-sm-12 border border-warning px-md-0 mt-3" id="collapse-body">
+      <p><span class="text-warning">Generos</span></p>
+      <section class="">
+        <ul class="flex-column pt-md-2 pt-sm-1 mt-md-3">
+          <% for (const elemento of genre) { %>
+            <li class="pt-md-2">
+              <!--CONSULTAR SI PUEDO TENER H3 REPETIDOS-->
+              <a class="p-2 item-genre text-warning" href='/?search=<%=elemento.nombre%>'>
+                <%=elemento.nombre%>
+              </a>
+            </li>
+            <%} %>
+        </ul>
+      </section>
+    </section>
+    <section class="container-fluid home-main-gallery col-xl-9 col-md-9 col-sm-12" id="main-gallery">
+      <div class="d-flex justify-content-between mt-3">
+        <div>
+          <button class="btn btn-warning" id="collapse" type="button">
+            <i class="bi bi-arrow-bar-right"></i>
+          </button>
+        </div>
+        <div aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link  bg-secondary" href="#" aria-label="Previous">
+                <span class="text-warning" aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link bg-secondary text-warning" href="/?page=1">1</a></li>
+            <li class="page-item"><a class="page-link bg-secondary text-warning" href="/?page=2">2</a></li>
+            <li class="page-item"><a class="page-link bg-secondary text-warning" href="/?page=3">3</a></li>
+            <li class="page-item"><a class="page-link bg-secondary text-warning" href="/?page=4">4</a></li>
+
+            <li class="page-item"><a class="page-link bg-secondary text-warning" href="/?page=5">5</a></li>
+            <li class="page-item"><a class="page-link bg-secondary text-warning" href="/?page=6">6</a></li>
+
+            <li class="page-item"> <a class="page-link bg-secondary text-warning" href="" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row" id="main-gallery">
+        <% for(let i=0; i < games.length; i++) {%>
+          <div class="col-xl-4 col-md-6 col-ms-12 p-1">
+            <div class="m-2 border border-warning">
+              <div class="gallery-item" id="viewer">
+                <a href="/detail/<%= games[i].id %>"><img src="<%=games[i].thumbnail%>" alt=""></a>
+              </div>
+            </div>
+          </div>
+          <%} %>
+      </div>
+    </section>
+  </main>
+  <script src="./JS/home.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  </footer>
+  <script>
+    pannellum.viewer('panorama', {
+      "type": "equirectangular",
+      "panorama": "./images/panoramica/panoramica.jpg",
+      "autoLoad": true,
+      "autoRotate": -5,
+
+    });
+  </script>
+  <%-include('footer')%>
